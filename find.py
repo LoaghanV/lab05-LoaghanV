@@ -25,10 +25,10 @@ def main():
         for lnCount, word in enumerate(file, start=1):
             if (args.ignore_case):
                 if args.pattern.lower() in word.lower():
-                    print(f'{lnCount}: {word[:-1]}')
+                    print(f'{lnCount}: {word.rstrip("\n")}')
             else:
                 if args.pattern in word:
-                    print(f'{lnCount}: {word[:-1]}')
+                    print(f'{lnCount}: {word.rstrip("\n")}')
     file.close()
 
 if __name__ == "__main__":
